@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>내용변경하기</title>
+</head>
+<body>
+    <h1>내용변경 실습</h1>
+    <button onclick="changeWeek00()">토요일 바꾸기</button>
+    <button onclick="changeWeek01()">일요일 바꾸기</button>
+    <button onclick="changeWeek02()">모두 바꾸기</button>
+    <ul>
+        <li>월요일</li>
+        <li>화요일</li>
+        <li>수요일</li>
+        <li>목요일</li>
+        <li>금요일</li>
+        <li>토요일</li>
+        <li>일요일</li>
+    </ul>
+    <script>
+        function changeWeek00(){
+            //토요일을 금요일로 변경되도록 구현
+            // let li = document.querySelectorAll("li");    //배열 형태로 가져옴.
+            let li = document.getElementsByTagName("li");   //배열 형태로 가져옴.
+            for(let i=0; i<li.length; i++){
+                if((li[i].innerText)=="토요일"){
+                    li[i].innerText = "금요일";
+                }
+            }
+        }
+        function changeWeek01(){
+            //일요일을 금요일로 변경되도록 구현       
+            let li = document.getElementsByTagName("li");
+            for(let i=0; i<li.length; i++){
+                if(li[i].innerText=="일요일"){
+                    li[i].innerText = "금요일";
+                }
+            }    
+        }
+        function changeWeek02(){
+            //모든 요일을 토요일로 변경되도록 구현
+            let li = document.getElementsByTagName("li");
+            for (let i = 0; i < li.length; i++) {
+                li[i].innerText = "토요일";
+            }
+        }
+    </script>
+</body>
+</html>

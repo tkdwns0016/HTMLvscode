@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>제어문</title>
+</head>
+
+<body>
+    <h1>제어문</h1>
+    <dl>
+        <dt>조건문</dt>
+        <dd>
+            <ul>
+                <li>if</li>
+                <li>if-else</li>
+                <li>if-ifelse-else</li>
+                <li>switch-case</li>
+            </ul>
+        </dd>
+        <dt>반복문</dt>
+        <dd>
+            <ul>
+                <li>while()</li>
+                <li>do-while()</li>
+                <li>for</li>
+                <li>for...in</li>
+            </ul>
+        </dd>
+    </dl>
+    <script>
+        var num = 10;
+        if (num) {
+            console.log("실행이 되는가?")
+        }
+        while (num) {
+            num--;
+            console.log("num: ", num)
+        }
+
+        //구구단
+        //while문 사용
+        var a = 2;
+        while (a != 10) {
+            var b = 1;
+            while (b != 10) {
+                document.write(a, "*", b, "=", a * b, "<br>");
+                b++;
+            }
+            a++;
+            document.write("-------------<br>");
+        }
+        //for문 사용
+        for (let index = 2; index < 10; index++) {
+            for (let hour = 1; hour < 10; hour++) {
+                document.write(index, "*", hour, "=", index * hour, "<br>")
+            }
+            document.write("-------------<br>");
+        }
+    </script>
+</body>
+
+</html>

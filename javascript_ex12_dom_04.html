@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>스타일 관련 속성</title>
+    </head>
+    <body>
+        <h1>style object</h1>
+        <dl>
+            <dt>스타일 객체를 참조하는 방법</dt>
+            <dd>
+                <ul>
+                    <li>element.style<br></li>
+                    <li>스타일 속성으로 스타일 객체를 참조 할 수 있다.</li>
+                    <li>기본적으로 css에서 사용하는 속성들을 객체의 속성으로 갖고있음</li>
+                    <li>카멜표현식으로 속성명이 작성되어있다.</li>
+                </ul>
+            </dd>
+            <dt>사용방법</dt>
+            <dd>
+                <ul>
+                    <li>element.style.backgroundColor = "black";</li>
+                    <li> element.style.background = "black url('image.jpeg') repeat-y";</li>
+                </ul>
+            </dd>
+        </dl>
+        <button onclick="chContainer()">컨테이너 스타일 적용!</button>
+        <button onclick="chSection()">section 바꾸기</button>
+        <button onclick="chAside()">aside 바꾸기</button>
+        <div id="container">
+            <section>본문</section>
+            <aside onclick="chAside()">기타</aside>
+        </div>
+        <script>
+            /*id가 container인 아이의 넓이를 500px 높이를 400px 배경색을 lightgreen*/
+            function chContainer(){
+                var container = document.getElementById("container");
+                console.dir(container);
+                container.style.width = "500px";
+                container.style.height = "400px";
+                container.style.backgroundColor = "lightgreen";
+            }
+            /*section 마진을 50px, 30px, 50px, 30px,테두리 검정 1px 실선*/
+            function chSection(){
+                var section = document.querySelector("section");
+                console.dir(section);
+                section.style.margin = "50px 30px";
+                section.style.border = "black 1px solid";
+            }
+            /*aside 테두리 검정 1px 점섬 둥근테두리*/
+            function chAside(){
+                var aside = document.querySelector("aside")
+                aside.style.border = "black 1px dotted"
+                aside.style.borderRadius = "50%";
+                console.dir(aside)
+            }
+            
+        </script>
+    </body>
+</html>

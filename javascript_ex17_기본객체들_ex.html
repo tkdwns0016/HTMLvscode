@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>기본 객체 실습</title>
+    </head>
+    <body>
+        <button id="ex00">년월일시분초 표기</button>
+        <p id="ex01"></p>
+        <hr>
+        <input type="text" name="personId" placeholder="주민번호 입력">
+        <button onclick="cheker()">주민번호 체크</button>
+        <p>정상적인 주민번호인가 아닌가</p>
+        <script>
+            document
+                .querySelector("#ex00")
+                .onclick = function () {
+                    setInterval(() => {
+                        var time = new Date();
+                        var p = document.getElementById("ex01");
+                        var date;
+                        if (time.getDay() == 0) {
+                            date = "일요일";
+                        } else if (time.getDay() == 1) {
+                            date = "월요일";
+                        } else if (time.getDay() == 2) {
+                            date = "화요일";
+                        } else if (time.getDay() == 3) {
+                            date = "수요일";
+                        } else if (time.getDay() == 4) {
+                            date = "목요일";
+                        } else if (time.getDay() == 5) {
+                            date = "금요일";
+                        } else if (time.getDay() == 6) {
+                            date = "토요일";
+                        }
+                        p.innerHTML = time.getFullYear() + "년 " + (
+                            time.getMonth() + 1
+                        ) + "월 " + time.getDate() + "일 " + date + "  " + time.getHours() + "시 " +
+                                time.getMinutes() + "분 " + time.getSeconds() + "초";
+                    }, 500);
+                }
+
+                // 주민번호 : ㄱㄴㅇㄹㅁㅂ-ㅅㅇㅈㅊㅋㅌㅍ
+                // 곱하기     2 3 4 5 6 7 8 9 2 3 4 5
+                // ㄱ*2+ㄴ*3... ㅋ*4+ㅌ*5 = 총합 ???
+                // ??? / 11 => 나머지
+                // 11에서 나머지를 뺌
+                // 남은 값에서 일의 자리를 구함.
+                // 일의 자리 값이 ㅍ과 같으면 정상적인 주민번호.
+                function cheker(){
+                    var aa = document.getElementsByName("personId");
+                    var personnum = ""+aa[0].value;
+                    var personArr = personnum.split("-");
+                    var a = new Array;
+                    var j=1;
+                    var i=0
+                    var result=0;
+                    // 960719-1409911
+                    for(i=0; i<personArr[0].length; i++){
+                        a.push(personArr[0].slice(i,j));
+                        j++;
+                    }
+                    j=1
+                    for(i=0; i<personArr[1].length; i++){
+                        a.push(personArr[1].slice(i,j));
+                        j++;
+                    }
+                    j=2;
+                    for(i=0; i<a.length-1; i++){
+                        result +=(a[i]*j);
+                        if(j==9){
+                            J=2;
+                        }
+                        j++;
+                    }
+                    result = result%11;
+                    result = 11-result;
+                    if(result==a[12]){
+                        alert("정상입니다")
+                    }else{
+                        alert("정상이 아닙니다.")
+                    }
+                }
+        </script>
+    </body>
+</html>

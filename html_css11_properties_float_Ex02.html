@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex02</title>
+    <style>
+        .box{background: blueviolet;}
+        .floating{float: left;}
+        .floating2{float: right;}
+        .position{position: 5px ;}
+        .big1{width: 117px; height: 106px; text-align: center; line-height: 106px;}
+        .big2{width: 240px; height: 106px; text-align: center; line-height: 106px;}
+        .middle{width: 240px; height: 50px; text-align: center; line-height: 50px;}
+        .small{width: 76px; height: 50px; text-align: center; line-height: 50px;}
+        .margin{margin: 3px;}
+        .clear{clear: left;}
+        section{width: 492px;}
+        section::after{content: ""; display: block; clear: both;}
+        .clear2{clear: right;}
+        .fs{font-size: 10px;}
+    </style>
+</head>
+<body>
+    <section>
+        <div class="box big1 floating fs margin">Home</div>
+        <div class="box big1 floating fs margin">About</div>
+        <div class="box middle floating fs margin">Widgets</div>
+        <div class="box small floating fs margin">Big Widgets</div>
+        <div class="box small floating fs margin">Bigger Widgets</div>
+        <div class="box small floating fs margin">Huge Widgets</div>
+        <div class="clear2"></div>
+    </section>
+    <section>
+        <div class="box middle floating fs margin">Kabobs</div>
+        <div class="box big2 floating2 fs margin">Contact</div>
+        <div class="clear"></div>
+        <div class="box small floating fs margin">Big Widgets</div>
+        <div class="box small floating fs margin">Big Widgets</div>
+        <div class="box small floating fs margin">Big Widgets</div>
+        
+    </section>
+</body>
+</html>

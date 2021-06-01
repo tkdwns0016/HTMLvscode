@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>마진</title>
+    <style>
+        div{width:100px;height: 200px}
+        .ex01{background:red; margin: 10px 5px;} /*2개 : 상하 좌우, 3개 :상 좌우 하, 4개 : 상 우 하 좌*/
+                                /*margin: 10px auto; <- 좌우를 페이지크기에 맞춰 자동으로 정렬하여 가운데에 오게끔 해준다.*/
+        .ex02{background: blue; margin: 10px 0 10px 5px;}
+        .ex03{
+            background:yellowgreen;
+            border: 1px solid black;
+            width: 200px; height: 200px;}
+        .ex04{
+            background: green;
+            margin-top: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>margin</h1>
+    요소와 요소 사이의 여백 = 마진
+    <div class="ex01"></div>    
+    <div class="ex02"></div>
+    
+    위 아래의 마진이 겹침현상<br>
+    두 블럭이 위 아래로 겹쳤을 때<br>
+    부모 자식으로 겹쳤을때<br>
+    <div class="ex03">
+        <div class="ex04"></div>
+    </div>
+    
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Images</title>
+</head>
+<body>
+    <h1>Image 태그</h1>
+    <img src="Images/image01.jpg" width="500" height="400" alt="이미지가 없음 미어캣입니다" title="미어캣">
+    <hr>
+    
+    <a href="https://www.naver.com"><img src="Images/naver.jpg" alt="네이버 바로가기" title="Naver 로고"></a>
+    <hr>
+
+    <img src="Images/naver_map_logo.png" usemap="#naver_map" alt="네이버 로고 화면">
+    <map name="naver_map">
+        <!--coords : 왼쪽위 좌표 x,y, 오른쪽아래 좌표 x,y : 사각 사진-->
+        <area shape="rect" coords="2,42,233,98" href="https://naver.com" alt="">
+    </map>
+    <img src="Images/imgmap_test.jpg" usemap="#portal_map" alt="각 포털사이트로 가는 포탈">
+    <map name="portal_map">
+        <area shape="circle" coords="662,182,123" href="https://google.com" alt="go 구글">
+        <area shape="rect" coords="589,384,969,472" href="https://daum.net" alt="go 다음">
+        <area shape="poly" coords="142,62,68,214,113,330,335,375,412,222,363,109" href="https:naver.com" alt="go 네이버">
+    </map>
+</body>
+</html>

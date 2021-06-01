@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            .red {
+                color: red;
+            }
+            .orange {
+                color: orange;
+            }
+            .yellow {
+                color: yellow;
+            }
+            .green {
+                color: green;
+            }
+            .blue {
+                color: blue;
+            }
+            .navy {
+                color: navy;
+            }
+            .purple {
+                color: purple;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="change()"><h1>마법의 버튼</h1></button>
+        <div><h1>마법의 글자</h1></div>
+        <script>
+            //버튼을 클릭할때마다 글자색이 [빨주노초파남보][빨주노초파남보]로 되게끔 할것.
+            function change() {
+                var div = document.querySelector("div");
+                if (div.className == "" || div.className == "purple") {
+                    div.className = "red";
+                    console.log("빨강");
+                } else if (div.className == "red") {
+                    div.className = "orange";
+                    console.log("주황");
+                } else if (div.className == "orange") {
+                    div.className = "yellow";
+                    console.log("노랑");
+                } else if (div.className == "yellow") {
+                    div.className = "green";
+                    console.log("초록");
+                } else if (div.className == "green") {
+                    div.className = "blue";
+                    console.log("파랑");
+                } else if (div.className == "blue") {
+                    div.className = "navy";
+                    console.log("남");
+                } else if (div.className == "navy") {
+                    div.className = "purple";
+                    console.log("보라");
+                }
+            }
+        </script>
+    </body>
+</html>

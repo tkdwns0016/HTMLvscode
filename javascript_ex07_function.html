@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function</title>
+</head>
+<body>
+    <h1>함수</h1>
+    <dl>
+        <dt>함수를 선언하는 방법</dt>
+        <dd>
+            <ul>
+                <li>function 함수명([param1[,param2[,...param]]]){내용}    //대괄호는 형식을 표현하는 표현식에서는 생략가능을 의미한다.
+                <ul>
+                    <li>함수를 선언하면 함수가 호이스팅 됨</li>
+                    <li>어디서도 사용이 가능하다.</li>
+                </ul>
+            </li>
+                <li>var x = function([param1[,param2[,...param]]]){내용}
+                <ul>
+                    <li>익명 함수</li>
+                    <li>변수 x가 생성된 시점 이후에 사용 가능하다.</li>
+                    <li>변수 x로 함수를 호출한다.</li>
+                    <li>예 : x(값1,값2,...)</li>
+                </ul>
+            </li>
+                <li>(function([param1[,param2[,...param]]]){내용})(값1,값2)
+                    <ul>
+                        <li>익명 함수, 즉시 실행 함수</li>
+                        <li></li>
+                    </ul>
+                </li>
+            </ul>
+        </dd>
+        <dt>함수 사용방법</dt>
+        <dd>
+            함수명(값1,값2..);
+        </dd>
+    </dl>
+    <script>
+        //함수가 호이스팅 되기 때문에 호출하는 문장이 위에 있어도
+        //호출이 가능하다.
+        printSum(10,5);
+
+        // 두 수를 더해서 콘솔에 출력하는 함수
+        function printSum(num1,num2){
+            console.log("num1+num2 : ",num1+num2);
+        }
+        
+        function sum(num1,num2){
+            return num1+num2;
+        }
+        var result = sum(10,20);
+        console.log("두 수의 합 : ",result);
+
+        //익명함수
+        var x = function(num1,num2,num3){
+            return num1+num2+num3;
+        }
+        console.log(x);
+        console.log(x(10,20,30));   //위의 방식과는 다르게 호이스팅이 되지 않아 익명함수를 만들고 난 뒤로 코드를 작성해야한다.
+
+        //즉시 실행함수
+        // y에는 함수의 실행결과가 들어감.
+        var y = (function(n1,n2,n3,n4){
+            return n1+n2+n3+n4;
+        })(10,20,30,40)
+        console.log(y);
+
+        //람다표현식
+        //var z = function(n1+n2){return n1+n2};
+        var z = (n1,n2)=>{return n1+n2};
+
+        // 사칙연산, 익명, 즉시실행 만들어볼것
+        // 인자개수에 상관없이 모두 더해서 반환하는 함수를 찾아볼것.
+        function sumA(...numbers){
+            var tot = 0
+            for(n of numbers){
+                tot +=n;
+            }
+            return tot;
+        }
+        var tot = sumA(10,20,30,40,50);
+        console.log("총합 : ",tot);
+    </script>
+</body>
+</html>

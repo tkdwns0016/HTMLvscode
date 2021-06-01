@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>텍스트 속성</title>
+    <style>
+        a{color:black; text-decoration: none;}
+        .ex01{
+            width: 100%; height: 200px; background-color: blanchedalmond; 
+            text-align: center; line-height: 200px;
+        }
+        .ex02{letter-spacing: 0px;}
+        .ex03{width: 200px; height: 23; background: yellowgreen; 
+            /*넘어간 글자를 말줄임(...)으로 표기하기위한 방식*/
+            overflow: hidden; /*2.옆으로 늘려진 글자를 보이지않게 해준다.*/
+            white-space: nowrap; /*1.잘려내려간 글자를 옆으로 늘여놓는다.*/
+            text-overflow: ellipsis; /*3.보이지 않는 글자가 있음을 알리기위해 (...)으로 표시한다.*/
+        }
+        .ex04{width:100%; height: 300px; line-height: 300px;}
+    </style>
+</head>
+<body>
+    <h1>텍스트 관련 속성</h1>
+    <a href="#">hello</a>
+    <div class="ex01">안녕하세요</div>
+    <div class="ex02">글자의 자간을 줄이자!</div>
+    <div class="ex03">아름다운 이땅에 금수강산에 단군할아버지가 터잡으시고 홍익인간 뜻으로 나라세우니 대대손손 훌륭한 인물도 많아 고구려</div>
+    <div class="ex04">
+        <img src="Images/ic_arrow_a.gif" alt="화살표">안녕하세요
+    </div>
+</body>
+</html>

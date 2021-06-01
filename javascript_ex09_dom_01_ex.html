@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>돔 선택 실습</title>
+</head>
+
+<body>
+    <h1>라면 요리</h1>
+    <dl>
+        <dt>라면 재료</dt>
+        <dd>
+            <ul>
+                <li id="ramyun">봉지라면</li>
+                <li>물 500ml</li>
+                <li class="some">달걀 한 개</li>
+                <li class="some">대파 조금</li>
+                <li class="some">청양고추 한 개</li>
+            </ul>
+        </dd>
+        <dt>라면 끓이는 법</dt>
+        <dd>
+            <ol>
+                <li>냄비에 물을 넣고 끓인다.</li>
+                <li>라면과 스프를 넣는다.</li>
+                <li>청양고추를 송송 썰어 넣는다.</li>
+                <li>달걀을 넣는다.</li>
+                <li>불을 끄고 대파를 송송 썰어 넣는다.</li>
+            </ol>
+        </dd>
+    </dl>
+    <script>
+        //1. id가 ramyun인 요소를 선택하여 그 요소를 기준으로
+        //청양고추를 송송 썰어 넣는다. 라는 내용이 있는 li를 찾아 선택하고 출력하시오.
+        var ramen = document.getElementById("ramyun");
+        // console.log(ramen);
+        var ul = ramen.parentElement;
+        // console.log(ul);
+        var dd = ul.parentElement;
+        // console.log(dd);
+        var dl = dd.parentElement;
+        // console.log(dl);
+        var method_dd = dl.lastElementChild;
+        // console.log(method_dd);
+        var go_ol = method_dd.lastElementChild
+        // console.log(go_ol);
+        var get_li = go_ol.children;
+        console.log(get_li[4].textContent);
+        
+        //2. 클래스가 some인 아이의 마지막 요소를 출력하시오
+        var get_some_last_element = document.getElementsByClassName("some")
+        console.log(get_some_last_element[2].textContent);
+
+        //3. 태그 이름이 dt인 아이를 선택하여 출력하시오
+        var get_dt = document.getElementsByTagName("dt")
+        console.log(get_dt[0]);
+        console.log(get_dt[1]);
+
+        //4. ol의 마지막 자식요소를 선택하고 그 안에 텍스트노드를 선택하여 출력하시오
+        var ol_chil = document.getElementsByTagName("ol")[0];
+        // console.log(ol_chil);
+        var li = ol_chil.children;
+        // console.log(li);
+        var nodes = li[4].childNodes;
+        console.log(nodes[0]);
+        
+    </script>
+</body>
+
+</html>

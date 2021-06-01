@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>요소 추가 삭제 실습</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" placeholder="이름을 입력하세요">
+    <input type="text" placeholder="나이를 입력하세요">
+    <button type="button" onclick="addmon()">추가</button>
+    <hr>
+    <table id="table">
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+        </tr>
+    </table>
+    
+    <input type="text" placeholder="삭제할 이름을 입력하세요" id="delete_name">
+    <button type="button" onclick="dele()">삭제</button>
+    <script>
+        //이름과 나이를 입력 후 추가 버튼을 클릭시
+        //테이블 안쪽에 이름, 나이값이 들어가도록 기능을 구현하도록.
+        var i = 0;
+        function addmon() {
+            var table = document.querySelector("table");
+            var named = document.querySelector("input").value;
+            var aged = document.querySelector("input").nextElementSibling.value;
+            if (named == "" || aged == "") {
+                alert("아이디 또는 비밀번호를 입력해주세요")
+            } else {
+                table.innerHTML = table.innerHTML + ("<tr>");
+                table.innerHTML = table.innerHTML + ("<th ondblclick='updating(this)'>" + named + "</th>" + "<th>" + aged + "</th>");
+                table.innerHTML = table.innerHTML + ("</tr>");
+            }
+        }
+
+        //삭제 기능
+        function dele() {
+            var tbody = document.getElementsByTagName("tbody")
+            var delename = document.getElementById("delete_name").value;
+            for (let j = 0; j < tbody.length; j++) {
+                if (tbody[j].clientHeight == 0) {
+                    tbody[j].remove();
+                }
+            }
+            for (let i = 0; i < tbody.length; i++) {
+                if (tbody[i].lastElementChild.firstChild.textContent == delename) {
+                    tbody[i].remove();
+                }
+            }
+        }
+        var elementCopy
+        function updating(trElement){
+            console.log(trElement.innerHTML);
+            elementCopy = trElement;
+            trElement.innerHTML = "<input type='text' onblur='bluring(this)' placeholder='수정 할 이름을 입력하세요'>"
+        }
+        
+        function bluring(inputElement){
+            elementCopy.innerHTML= inputElement.value;        
+        }
+
+
+    </script>
+</body>
+
+</html>

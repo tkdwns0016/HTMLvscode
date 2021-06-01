@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+
+<body>
+    <h1>요소를 선택하는 방법</h1>
+    <ul>
+        <li>선택자로 선택하는 방법
+            <ol>
+                <li>요소객체.querySelector("선택자")
+                <ul>
+                    <li>하나의 요소를 선택하는 방법</li>
+                </ul>
+            </li>
+            <li>요소객체.querySelectorAll("선택자")
+                <ul>
+                    <li>여러요소를 선택하여 배열방식으로 쓰는 방법</li>
+                </ul>
+            </li>
+            </ol>
+        </li>
+        <li>태그로 선택하는 방법
+            <ol>
+                <li>태그로 선택 - document.getElementsByTagName("태그명")
+                    <ul>
+                        <li>배열 형태로 선택된다</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+        <li>속성으로 선택하는 방법
+            <ol>
+                <li id="id_ex01">id로 선택 - document.getElementById("id명")
+                    <ul>
+                        <li>하나의 객체로 선택된다.</li>
+                    </ul>
+                </li>
+                <li class="class_ex01">class로 선택 - document.getElementsByClassName("클래스명")
+                    <ul>
+                        <li>배열의 형태로 선택된다</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+        <li>요소간의 관계로 선택하는 방법
+            <ol>
+                <li>노드 (텍스트노드, 엘리먼트노드) 로 접근한다.</li>
+                <li>부모
+                    <ul>
+                        <li>요소객체.parentNode</li>
+                    </ul>
+                </li>
+                <li>형제
+                    <ul>
+                        <li>다음형제 - 요소객체.nextSibling</li>
+                        <li>이전형제 - 요소객체.previousSibling</li>
+                    </ul>
+                </li>
+                <li>자식
+                    <ul>
+                        <li>자식들 - 요소객체.childNodes</li>
+                        <li>마지막자식 - 요소객체.lastChild</li>
+                        <li>자식들 중 요소만 - 요소객체.children</li>
+                        <li>요소 중 마지막 자식 - 요소객체.lastElementChild</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+    </ul>
+    <script>
+        /*querySelector*/
+        var first_li = document.querySelector("ul>li>ol>li");
+        console.log(first_li);
+        /*querySelectorAll 다중으로 선택*/
+        var li = document.querySelectorAll("ul>li>ol>li");
+        console.log(li);
+
+        /*getElementsByTagName 다중으로 선택*/
+        var ol = document.getElementsByTagName("ol");
+        console.log(ol);
+        /*getElementsById 하나만 선택*/
+        //var id_ex01 = document.getElementById("id_ex01")
+        var id_ex01 = document.querySelector("#id_ex01");
+        console.log(id_ex01);
+        /*getElementsByClassName 다중으로 선택*/
+        var class_ex01 = document.getElementsByClassName("class_ex01");
+        console.log(class_ex01);
+        
+        /*body 의 자식 ul의 마지막 자식 요소 : li*/
+
+        //body요소를 선택
+        var body = document.getElementsByTagName("body")[0];
+        // var bodyschildNodes = body.childNodes    //자식들을 구하는데 text부분도 구함. [개행,띄어쓰기]
+        // console.log(bodyschildNodes);
+        var children = body.children;   // 자식들중 요소만 구함.
+        console.log(children);
+        var ul = children[1];
+        var body_ul_li = ul.lastElementChild;
+        console.log(body_ul_li);
+        console.log(body_ul_li.previousSibling);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>간단한 계산기</title>
+    <style>
+        .display_none {
+            display: none;
+        }
+
+        .error_a {
+            color: red;
+        }
+
+        .error_b {
+            color: red;
+        }
+
+        .error_c {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        두 수를 입력받아 버튼을 클릭 시, 해당되는 연산을 수행 후
+        p태그 안쪽에 결과값을 출력하는 코드 작성
+    </p>
+    <form name="myCalc">
+        <p class="error_a display_none">숫자 1를 입력해 주십시오</p>
+        <p class="error_b display_none">숫자 2를 입력해 주십시오</p>
+        <p class="error_c display_none">숫자 1, 숫자 2를 입력해 주십시오</p>
+        <input type="text" name="number1" placeholder="숫자1 입력">
+        <input type="text" name="number2" placeholder="숫자2 입력">
+        <p id="result"></p>
+
+
+        <button type="button" onclick="plus()">더하기</button>
+        <button type="button" onclick="min()">빼기</button>
+        <button type="button" onclick="mul()">곱하기</button>
+        <button type="button" onclick="div()">나누기</button>
+
+        <fieldset>
+            <legend>계산</legend>
+            <label><input type="radio" name="calc" value="+" onclick="plus()">+</label>
+            <label><input type="radio" name="calc" value="*" onclick="min1()">-</label>
+            <label><input type="radio" name="calc" value="-" onclick="mul()">*</label>
+            <label><input type="radio" name="calc" value="/" onclick="div()" p>/</label>
+        </fieldset>
+        <br>
+        <br>
+        <br>
+    </form>
+    <p>두수를 받아 선택</p>
+    <fieldset>
+        <form name="myCalc3">
+            <input type="text" name="number1" placeholder="숫자1 입력">
+            <select name="op">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type="text" name="number2" placeholder="숫자2 입력">
+            <button type="button" onclick="resultset()">확인</button>
+            <p id="result3"></p>
+        </form>
+    </fieldset>
+    <p>입력된 값을 계산하여 p태그에 출력</p>
+
+
+    <p>4. 버튼으로 입력된 식을 계산하여 p태그에 출력</p>
+    <form name="myCalc4">
+        <hr>
+        <input type="text" name="sic" placeholder="식을 입력"><br>
+        <button type="button" onclick="one()">1</button><button type="button" onclick="two()">2</button><button
+            type="button" onclick="three()">3</button><br>
+        <button type="button" onclick="four()">4</button><button type="button" onclick="five()">5</button><button
+            type="button" onclick="six()">6</button><br>
+        <button type="button" onclick="seven()">7</button><button type="button" onclick="eight()">8</button><button
+            type="button" onclick="nine()">9</button><br>
+        <button type="button" onclick="zero()">0</button><br>
+        <button type="button" onclick="pluu()">+</button><button type="button" onclick="minn()">-</button><button
+            type="button" onclick="mull()">*</button><button type="button" onclick="divv()">/</button><br>
+        <button type="button" onclick="checking()">확인</button>
+        <p id="result4"></p>
+    </form>
+    <script>
+        var form = document.myCalc
+        var form1 = document.myCalc4
+        var input = form1.sic;
+        function plus() {
+            let num1 = form.number1.value;
+            let num2 = form.number2.value;
+            let result = document.getElementById("result");
+            let result1 = Number(num1) + Number(num2);
+            console.log(result1);
+            result.innerHTML = "값은 : " + result1
+        }
+
+        function min1() {
+            form = document.myCalc;
+            let num1 = form.number1.value;
+            let num2 = form.number2.value;
+            let result = document.getElementById("result");
+            let result1 = Number(num1) - Number(num2);
+            console.log(result1);
+            result.innerHTML = "값은 : " + result1
+        }
+
+        function min() {
+            form = document.myCalc;
+            let num1 = form.number1.value;
+            let num2 = form.number2.value;
+            let result = document.getElementById("result");
+            let result1 = Number(num1) - Number(num2);
+            console.log(result1);
+            result.innerHTML = "값은 : " + result1
+        }
+
+        function mul() {
+            form = document.myCalc;
+            let num1 = form.number1.value;
+            let num2 = form.number2.value;
+            let result = document.getElementById("result");
+            let result1 = Number(num1) * Number(num2);
+            console.log(result1);
+            result.innerHTML = "값은 : " + result1
+        }
+
+        function div() {
+            form = document.myCalc;
+            num1 = form.number1.value;
+            num2 = form.number2.value;
+            let result = document.getElementById("result");
+            let result1 = Number(num1) / Number(num2);
+            console.log(result1);
+            result.innerHTML = "값은 : " + result1
+        }
+
+        function resultset() {
+            let form1 = document.myCalc3;
+            let num11 = form1.number1.value;
+            let e = form1.op.value;
+            let num22 = form1.number2.value;
+            let result = 0;
+            let p = document.getElementById("result3");
+            result = Number(num11) + e + Number(num22);
+            let sum2 = eval(result);
+            p.innerHTML = "값은 : " + sum2;
+            // e.innerHTML=sum2;
+        }
+
+        function one() {
+            input.value = input.value + "1";
+        }
+
+        function two() {
+            input.value = input.value + "2";
+        }
+
+        function three() {
+            input.value = input.value + "3";
+        }
+
+        function four() {
+            input.value = input.value + "4";
+        }
+
+        function five() {
+            input.value = input.value + "5";
+        }
+
+        function six() {
+            input.value = input.value + "6";
+        }
+
+        function seven() {
+            input.value = input.value + "7";
+        }
+
+        function eight() {
+            input.value = input.value + "8";
+        }
+
+        function nine() {
+            input.value = input.value + "9";
+        }
+
+        function zero() {
+            input.value = input.value + "0";
+        }
+
+        function pluu() {
+            input.value = input.value + "+";
+        }
+
+        function minn() {
+            input.value = input.value + "-";
+        }
+
+        function mull() {
+            input.value = input.value + "*";
+        }
+
+        function divv() {
+            input.value = input.value + "/";
+        }
+
+        function checking() {
+            var bb;
+            let a = input.value;
+             console.log(parseInt(a));
+            // while()
+            for(e of a){
+               bb=e
+               console.log(bb);
+            }
+            // qq = a.indexOf("+");
+            // if (a.indexOf("+") > 0) {
+            //     var num1 = a.substring(0, a.indexOf("+"))
+            //     var num2 = a.substring(a.indexOf("+") + 1, a.length)
+            //     var result1 = parseInt(num1) + parseInt(num2);
+            //     console.log(result1);
+            // }
+            // if (a.indexOf("-") > 0) {
+            //     var num1 = a.substring(0, a.indexOf("-"))
+            //     var num2 = a.substring(a.indexOf("-") + 1, a.length)
+            //     var result2 = parseInt(num1) - parseInt(num2);
+            //     console.log("여기1");
+            // }
+            // if (a.indexOf("*") > 0) {
+            //     var num1 = a.substring(0, a.indexOf("*"))
+            //     var num2 = a.substring(a.indexOf("*") + 1, a.length)
+            //     var result3 = parseInt(num1) * parseInt(num2);
+            // }
+            // if (a.indexOf("/") > 0) {
+            //     var num1 = a.substring(0, a.indexOf("/"))
+            //     var num2 = a.substring(a.indexOf("/") + 1, a.length)
+            //     var result4 = parseInt(num1) / parseInt(num2);
+            // }
+            // var num1 = a.substring(0,a.indexOf("+"))
+            // var num2 = a.substring(a.indexOf("+")+1,a.length)
+            // var p11 = document.getElementById("result4");
+            // console.log(result3);
+            // let result = result3 + result4 + result1 + result2;
+            // p11.innerHTML = "값은 : " + result
+
+        }
+    </script>
+</body>
+
+</html>

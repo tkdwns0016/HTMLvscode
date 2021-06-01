@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event_ex</title>
+    <style>
+        .aq {
+            border: 1px dotted blue;
+            width: 200px;
+            height: 200px;
+        }
+        
+        .movediv{
+            float: left;
+            width: 130px;
+            height: 130px;
+            border: blue solid 1px;
+        }
+    </style>
+   <script>
+       window.addEventListener("DOMContentLoaded",function(){
+        var movediv = document.getElementsByClassName("movediv");
+        movediv[0].ondrag = function(){
+
+        }
+       });
+   </script>
+</head>
+
+<body>
+    <input type="text" onkeypress="alerted()">
+    <hr>
+    <input type="text" oncopy="copy()" id="input"><br><br>
+    <div class="aq">클립보드에 저장된 내용 : </div>
+    <hr>
+    <input type="text" id="inputfocus" onfocus="focuszz()" placeholder="입력해보세요">
+    <hr>
+    <img src="Images/bimg04.jpg" alt="ss" onmouseover="onmousing(this)" onmouseout="onmouseouting(this)" width="100px"
+        height="100px">
+        <hr>
+    <div class="movediv">
+        <p draggable="true" ondrag="">옮겨보세요</p>
+    </div>
+    
+    <div class="movediv" style="margin-left: 20px;"></div>
+    <!-- dragover ondrop ondragstart ondrag draggable -->
+    <script>
+        function alerted() {
+            alert("돈 터치");
+        }
+
+        function copy() {
+            var a = document.getElementById("input").value;
+            var b = document.getElementsByClassName("div");
+            b[0].innerHTML = "클립보드에 저장된 내용 : " + a;
+        }
+
+        function focuszz() {
+            document.getElementById("inputfocus").style.background = "yellow";
+        }
+
+        var i = 0;
+        function onmousing(x) {
+            x.style.width = "300px";
+            x.style.height = "300px";
+        }
+
+        function onmouseouting(x) {
+            x.style.width = "100px";
+            x.style.height = "100px";
+        }
+    </script>
+</body>
+
+</html>

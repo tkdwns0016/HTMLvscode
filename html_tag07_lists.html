@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lists</title>
+</head>
+<body>
+    <h1>목록 태그</h1>
+    태그 : ol,ul,li <br>
+    ol : ordered List : 순서를 표시하는 리스트<br>
+    ul : unOrdered List : 순서를 표시하지 않는 리스트<br>
+    li : list item : 각 리스트의 아이템<br>
+    <hr>
+    <strong>ol -> li</strong><br>
+    요리 순서
+    <ol> <!--숫자가 생겨서 순서를 표시한다.-->
+        <li>물을 넣는다</li>
+        <li>물을 끓는다</li>
+        <li>라면을 넣는다</li>
+        <li>계란을 넣는다</li>
+    </ol>
+    <hr>
+    <strong>ul -> li</strong><br>
+    언어의 종류
+    <ul> <!--ㆍ같은 기호가 생겨 순서 없이 표시한다.-->
+        <li>HTML</li>
+        <li>JAVA</li>
+        <li>PYTHON</li>
+        <li>JAVASCRIPT</li>
+    </ul>
+
+    <hr>
+    중첩으로 사용도 가능
+    <ul> <!--ㆍ로 리스트를 표시하고 li안에 ul을 또 만들어 。로 하부메뉴같이 표시한다.-->
+        <li>축구</li>
+        <li>농구</li>
+        <li>야구</li>
+        <li>
+            <ul>
+                <li>1번</li>
+                <li>2번</li>
+                <li>3번</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+    <h2>용어 리스트</h2><!--크기가 두번째로 작은 글자크기를 표시-->
+    <dl>
+        <dt>자바</dt>
+        <dd> <!--앞에 텀이 생김.-->
+            객체지향 프로그래밍 언어이다<br>
+            캡슐화를 사용하여 보안에 좋다. <br>
+            한국에서는 80%정도의 점유율을 갖고있다.
+        </dd>
+        <dt>HTML</dt>
+        <dd>
+            하이퍼텍스트 마크업 랭기지이다. <br>
+            태그로 이루어져 있는 문제이다. <br>
+            브라우저가 해석해서 표현해준다. <br>
+        </dd>
+    </dl>
+
+
+</body>
+</html>

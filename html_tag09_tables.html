@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+</head>
+<body>
+    <h1>테이블</h1>
+    테이블은 표를 표현할 때 쓰는 태그<br>
+    <table border="1">
+       <tr>
+        <td>셀1</td>
+        <td>셀2</td>
+       </tr> 
+    </table>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>포지션</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1번</td>
+                <td>브랜드</td>
+                <td rowspan="3">미드</td>
+            </tr>
+            <tr>
+                <td>2번</td>
+                <td>직스</td>
+            </tr>
+            <tr>
+                <td>3번</td>
+                <td>애니비아</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">
+                    주소 : 소환사의 협곡!
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <table border="1">
+         <tr>
+            <td rowspan="4"><img src="Images/image01.jpg" width="50" height="200" alt="증명사진"></td>
+            <td colspan="4">이&nbsp;력&nbsp;서</td>
+        </tr>
+        <tr>
+            <td rowspan="2">성명</td>
+            <td rowspan="2">&nbsp;</td>
+            <td colspan="2">주&nbsp;민&nbsp;등&nbsp;록&nbsp;번&nbsp;호</td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4">생년월일 1996년 07월 19일생 (만24세)</td>
+        </tr>
+        <tr>
+            <td>주&nbsp;소</td>
+            <td colspan="4"></td>
+        </tr>
+        <tr>
+            <td rowspan="2">연락처</td>
+            <td>집</td>
+            <td>&nbsp;</td>
+            <td rowspan="2">전자우편</td>
+            <td rowspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>핸드폰</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</body>
+</html>

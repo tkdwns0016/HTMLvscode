@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pseudo</title>
+    <style>
+        p.ex01::first-line{color: #ff0000;}
+        p.ex02::before{content: url(Images/ic_arrow_a.gif);}
+        p.ex03::selection{color: #ff0000; background: gray;}
+        p.ex04:hover{color: blue; font-size: 50px;}
+        div:hover img{display: block;}
+        img{display: none; background: red; padding: 50px;}
+        input.name:focus{border: red 5px solid;}
+        input.radio:focus{width: 50px; height: 50px;}
+        input[type=checkbox]:focus{width: 50px; height: 50px;}
+
+        ol li:first-child{color:red}
+        ol li:last-child{font-weight: bold;}
+        ol li:nth-child(3n){background: yellow;} /*odd 홀수 ,  2n 짝수 , 3n 3번째마다.*/
+    </style>
+</head>
+<body>
+    <h1>pseudo-elements</h1>
+    <p class="ex01">
+        첫줄의 글자를 선택하는 아이 ::first-line <br>
+        두번째 줄!!! <br>
+    </p>
+    <p class="ex02">
+        태그의 앞쪽에 어떤 내용을 추가하는 아이 ::before 
+    </p>
+    <p class="ex03">
+        선택된*(드래그해서 선택한 내용) 부분을 선택하는 아이 ::selection
+    </p>
+    <hr>
+    <h1>pseudo-classes</h1>
+    <p class="ex04">
+        마우스를 올렸을 때, 마우스를 요소 밖으로 뺐을 때
+    </p>
+    <div>마우스를 올려보세요
+        <img src="Images/naver/TV연예홈1.png" alt="">
+    </div>
+    <hr>
+    <ul>
+        <li>:checked - 체크박스같은 애들이 체크된 상태일 때</li>
+        <li>:focus - 인풋의 커서가 활성화 되어있을 때</li>
+    </ul>
+    <input class="name" type="text" >
+    <input class="radio" type="radio">
+    <input type="checkbox">
+
+    <ol>
+        <li>1번</li>
+        <li>2번</li>
+        <li>3번</li>
+        <li>4번</li>
+        <li>5번</li>
+        <li>6번</li>
+        <li>7번</li>
+    </ol>
+</body>
+</html> 
